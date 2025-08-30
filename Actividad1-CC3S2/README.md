@@ -46,4 +46,21 @@ Contexto del tema:
 * Mientras que se ve casada tiene menos flexibilidad, lo hace bien para proyectos medianos-pequeños.
 * DevOps destaca en cuanto a la complejidad. Hace mas fluido al avance en conjunto con los demás departamentos. 
 
-# Ciclo tradicional de dos pasos y silos
+### Ciclo tradicional de dos pasos y silos
+Los ciclos de dos pasos, se refiere a la parte del proyecto que le corresponde a los de operación. Las cuales constan de 2 fases: Construcción y Operación.
+* **Construcción(build)**: Parte del software que se desarrolla en un entorno aislado.
+* **Operación(run)**: Encargados de ejecutar, monitoriar y si hubiera incidentes responder ante ellos.  
+
+En cuanto a que son los silos. Se pueden decir que son estructuras **asiladas** en la organización, en donde cada equipo (desarrollo, QA, operaciones) trabaja con un objetivo particular. Además, escasea la comunicación.
+
+Por lo que surge una barrera, pero también consigo trae nuevas formas de sortearlas. Como es el caso de "handoffs" (transferencias formales de trabajo) que es una forma de comunicación entre el equipo global.
+
+
+1. Limitaciones del ciclo tradicional
+* Grandes lotes de cambios
+  *  
+* Colas de defectos y tiempos muertos
+   
+2. 
+
+
