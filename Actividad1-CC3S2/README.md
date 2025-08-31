@@ -56,11 +56,62 @@ En cuanto a que son los silos. Se pueden decir que son estructuras **asiladas** 
 Por lo que surge una barrera, pero también consigo trae nuevas formas de sortearlas. Como es el caso de "handoffs" (transferencias formales de trabajo) que es una forma de comunicación entre el equipo global.
 
 
-1. Limitaciones del ciclo tradicional
+1. Limitaciones del ciclo tradicional sin CI
 * Grandes lotes de cambios
-  *  
+  * Al acomular nuevas funcionalidades y correcciones pasadas los costes de integración aumentan.
+  * En caso de fallar algo, no estará claro en donde se originó el error.
 * Colas de defectos y tiempos muertos
+  * Los errores detectados son naturalmente reportados, pero el tiempo en llegar al equipo de desarrollo para su correción aumenta.
+  * Genera los **handoffs con asimetría de información**, lo que significa que una de las partes tiene menos o nula información con respecto a la otra parte. 
    
-2. 
+2. Anti-patrones del ciclo en silos
+
+* Anti-patrón 1:"Throw over the wall" (lanzar sobre la pared)
+
+  * Lo que significa es que el equipo de desarrollo entrega el software al equipo de operaciones por entregar, ej. Dar solo el código sin ningún tipo de comentarios, instrucciones de como es el funcionamiento de los algoritmos.
+
+  * El efecto que genera esta práctica es crear una *"caja negra"*, por lo que operaciones tarda en investigar las funciones para un diagnóstico.
+
+* Anti-patrón 2: "Seguridad como auditoría tardía"
+  * Es pensar que la seguridad se implementa y revisa al final del desarrollo en lugar de integrarla desde un inicio.
+  * Causando que al detectar vulnerabilidades se tenga que reabrir fases ya cerradas. 
+
+### Principios y beneficios de DevOps
+
+1. Integración continua CI
+  * Hacer cambios en el código de forma frecuente y a la vez ligeras(diariamente).
+  * Reduce el costo de integración tardía.
+
+2. Entrega continua CD
+  * Se asegura que el software siempre esté en estado "deployable"(listo para lanzamiento)
+  * Incluye pruebas más amplias como: integración, seguridad, etc.
+  * Hace que los despliegues sean menos riezgosos, teniendo en cuenta que son reversibles.
+ 
+3. **Agile** precursor de DevOps
+  * Las prácticas de este método siguen siendo utilizadas como "daily stand-up"(reuniones diarias). Permite identificar y solucionar los bloqueos encontrados.
+    * Con esto se puede saber también que "branchs"(ramas) se les dará prioridad.
+  * Usando retrospectiva nos permite aprender los incidentes o despliegues fallidos.
+    * Se puede llegar a redifinir políticas en la producción.
+    * Evita recaer en episodios no deseados.
+4. Indicador observable de colaboración Dev–Ops
+Los **PR**(pull resques) son solicitudes para fucionar ramas a otras ramas.
+  * Se refleja con ello si los equipos están en sincronía.
+  * Hay un notorio cambio entre PR, si el tiempo baja es buen indicativo.
+  * No es de paga, ya que los repositorios tienen un registro del tiempo en donde se hacen cada PR.  
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
 
 
