@@ -1,5 +1,5 @@
 # Actividad_1_ Jose Espinoza Rivadeneira
-Tiempo Invertido: 3 horas, desde 29/08/2025
+Tiempo Invertido: 5 horas, desde 29/08/2025
 Contexto del tema: 
 
 ## Estructura de actividad 1 
@@ -7,7 +7,8 @@ Contexto del tema:
 2. Ciclo tradicional de dos pasos y silos
 3. Principios y beneficios de DevOps
 4. Evolución a DevSecOps
-5. 
+5. CI/CD y estrategias de despliegue
+6. Fundamentos prácticos sin comandos
 
 ## Entrega actividad 1
 ### DevOps vs. cascada tradicional
@@ -135,7 +136,31 @@ Dos señales de eficacia y cómo medirlas.
   * Cuando el tiempo entre la detección de una vulnerabilidad y su cierre efectivo amenora.
   * Se puede usar los ¨timestamps de detección y cierre en los issues¨.   
   
+### CI/CD y estrategias de despliegue
+1. Microservicio: Autentificación
+* La estrategía que usada será un "despliegue canary".
+* Tiene como objetivo analizar si hay una mayor latencia, procesos de login.
+* Podría ser una nueva forma de autentificar, como loguearse por medio de terceros(federado).
 
+2. Tabla  de riesgos vs mitigaciones
+
+ | Riesgo | Mitigación | 
+ |-----------------|--------------------|
+ | Regresión funcional(una función deja de responder como debería)| Validación de contratos de API en pipeline antes de seguir avanzando| 
+ | El costo operativo de tener dos versiones| Límites de tiempo en que puedan haber versiones ejecutandose|
+ | Usuarios que están autenticados en la versión antigua| Estrategia de draining de sesiones y compatibilidad de esquemas en tokens/cookies| 
+
+3. KPI primario de gate
+Es el indicativo de una empresa si está cumpliendo sus objetivos.
+* KPI: Errores 5xx en autenticación
+  * Los errores tipo 5xx son respuestas de error del servidor, o sea que no se pudo completar una solicitud.
+* Umbral: < 0.5% de requests con error 5xx
+* Ventana de observación: 15 minutos después de habilitar el canary
+* Se puede actuar de la siguiente manera:
+  * Si llego a superar el umbral: **rollback** automático.
+  * Si se mantiene estable: Ampliar a más usuarios a seguir migrando.
+
+### Fundamentos prácticos sin comandos
 
 
 
