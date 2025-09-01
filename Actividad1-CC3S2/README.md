@@ -1,8 +1,9 @@
 # Actividad_1_ Jose Espinoza Rivadeneira
 Tiempo Invertido: 5 horas, desde 29/08/2025
-Contexto del tema: 
 
-## Estructura de actividad 1 
+Contexto del tema: Conocer más sobre el funcionamiento y obstáculos en el desarrollo de una aplicación. 
+
+## 1. Estructura de actividad 1 
 1. DevOps vs. cascada tradicional
 2. Ciclo tradicional de dos pasos y silos
 3. Principios y beneficios de DevOps
@@ -10,8 +11,8 @@ Contexto del tema:
 5. CI/CD y estrategias de despliegue
 6. Fundamentos prácticos sin comandos
 
-## Entrega actividad 1
-### DevOps vs. cascada tradicional
+## 2. Entrega actividad 1
+### 2.1 DevOps vs. cascada tradicional
 1. Funcionamiento de cada modelo
 * Modelo tradicional cascada
   * Un enfoque secuencial del desarrollo. En cada fase(desarrollo, QA, operaciones) debe terminar antes de pasar a la siguiente. 
@@ -48,7 +49,7 @@ Contexto del tema:
 * Mientras que se ve casada tiene menos flexibilidad, lo hace bien para proyectos medianos-pequeños.
 * DevOps destaca en cuanto a la complejidad. Hace mas fluido al avance en conjunto con los demás departamentos. 
 
-### Ciclo tradicional de dos pasos y silos
+### 2.2 Ciclo tradicional de dos pasos y silos
 Los ciclos de dos pasos, se refiere a la parte del proyecto que le corresponde a los de operación. Las cuales constan de 2 fases: Construcción y Operación.
 * **Construcción(build)**: Parte del software que se desarrolla en un entorno aislado.
 * **Operación(run)**: Encargados de ejecutar, monitoriar y si hubiera incidentes responder ante ellos.  
@@ -78,7 +79,7 @@ Por lo que surge una barrera, pero también consigo trae nuevas formas de sortea
   * Es pensar que la seguridad se implementa y revisa al final del desarrollo en lugar de integrarla desde un inicio.
   * Causando que al detectar vulnerabilidades se tenga que reabrir fases ya cerradas. 
 
-### Principios y beneficios de DevOps
+### 2.3 Principios y beneficios de DevOps
 
 1. Integración continua CI
   * Hacer cambios en el código de forma frecuente y a la vez ligeras(diariamente).
@@ -101,7 +102,7 @@ Los **PR**(pull resques) son solicitudes para fucionar ramas a otras ramas.
   * Hay un notorio cambio entre PR, si el tiempo baja es buen indicativo.
   * No es de paga, ya que los repositorios tienen un registro del tiempo en donde se hacen cada PR.  
 
-### Evolución a DevSecOps
+### 2.4 Evolución a DevSecOps
 
 1. Diferencia SAST vs. DAST
 * SAST (Static Application Security Testing):
@@ -136,7 +137,7 @@ Dos señales de eficacia y cómo medirlas.
   * Cuando el tiempo entre la detección de una vulnerabilidad y su cierre efectivo amenora.
   * Se puede usar los ¨timestamps de detección y cierre en los issues¨.   
   
-### CI/CD y estrategias de despliegue
+### 2.5 CI/CD y estrategias de despliegue
 1. Microservicio: Autentificación
 * La estrategía que usada será un "despliegue canary".
 * Tiene como objetivo analizar si hay una mayor latencia, procesos de login.
@@ -160,7 +161,7 @@ Es el indicativo de una empresa si está cumpliendo sus objetivos.
   * Si llego a superar el umbral: **rollback** automático.
   * Si se mantiene estable: Ampliar a más usuarios a seguir migrando.
 
-### Fundamentos prácticos sin comandos
+### 2.6 Fundamentos prácticos sin comandos
 
 
 
