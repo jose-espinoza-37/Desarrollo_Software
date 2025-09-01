@@ -140,6 +140,7 @@ Dos señales de eficacia y cómo medirlas.
   * Se puede usar los ¨timestamps de detección y cierre en los issues¨.   
   
 ### 2.5 CI/CD y estrategias de despliegue
+![2.5](imagenes/pipeline_canary.png)
 1. Microservicio: Autentificación
 * La estrategía que usada será un "despliegue canary".
 * Tiene como objetivo analizar si hay una mayor latencia, procesos de login.
@@ -218,7 +219,7 @@ Al momento de visitar un sitio web con HTTP, el navegador de forma inmediata "ne
 * Conflictos de puertos ocupados
   * Si hay un puerto en uso por otro proceso, el servicio no podrá iniciarse. 
 
-5. 12-Factor
+
 
 
 
