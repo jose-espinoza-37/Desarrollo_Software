@@ -13,6 +13,8 @@ Contexto del tema: Conocer más sobre el funcionamiento y obstáculos en el desa
 
 ## 2. Entrega actividad 1
 ### 2.1 DevOps vs. cascada tradicional
+![2.1](imagenes/devops-vs-cascada.png)
+
 1. Funcionamiento de cada modelo
 * Modelo tradicional cascada
   * Un enfoque secuencial del desarrollo. En cada fase(desarrollo, QA, operaciones) debe terminar antes de pasar a la siguiente. 
@@ -164,6 +166,7 @@ Es el indicativo de una empresa si está cumpliendo sus objetivos.
 ### 2.6 Fundamentos prácticos sin comandos
 
 1. HTTP – contrato observable
+![2.6.1](imagenes/http-evidencia.png)
 Se puede inferir el comportamiento del servidor con las respuestas que esta nos pueda dar.
 
 * **Método**: Es lo que indique la intención de la petición. Puede ser `[POST]`, `[GET]`.
@@ -173,6 +176,7 @@ Se puede inferir el comportamiento del servidor con las respuestas que esta nos 
 
 
 2. DNS – nombres y TTL
+![2.6.2](imagenes/dns-ttl.png)
 Cuando se consulta al DNS, se puede ver que tipo de registro apunta y por cuanto tiempo se mantiene válido(TTL).
 * Cuando el TTL es bajo(60-300s):
   * Una propagación rápida, los clientes resfrescan la IP de forma frecuente.
@@ -184,7 +188,37 @@ Cuando se consulta al DNS, se puede ver que tipo de registro apunta y por cuanto
 
 
 3. TLS - seguridad en tránsito 
+![2.6.3](imagenes/tls-cert.png)
+Al momento de visitar un sitio web con HTTP, el navegador de forma inmediata "negocia" un certificado. El cual es para verificar la identidad del servidor y que la conexión esté cifrada.
 
+* CN/SAN(Common Name / Subject Alternative Name):
+  * El nombre común en este caso es: www.google.com 
+*  Vigencia
+  * emitida: 11 de agosto
+  * vencimiento: 3 noviembre
+
+* Sino se llegara a certificar
+  * Nos mostraría una advertencia como: `La conexión no es privada`
+  * Puede ocurrir cuando el "certificado" está autofirmado o tiene una CA no reconocida, caducada.
+  * Por lo que hay la posibilidad de que haya un tercero manejando la certificación, con intenciones espiar o modificar el tráfico.    
+
+
+4. Puertos - estado de runtime
+![2.6.4](imagenes/puertos.png)
+* Puerto 22 (TCP)
+  * Servicio: SSH (acceso remoto seguro)
+  * Indica que el servidor permite conexiones de administración vía terminal
+* Puerto 5432 (TCP)
+  * Servicio: PostgreSQL (base de datos)
+  * Se requiere su presencia cuando hay aplicaciones que necesiten persistencia de datos
+ 
+* Despliegues incompletos
+  * Es una forma de saber si un servicio se completó, cuando el puerto está en modo "escuchar".
+      
+* Conflictos de puertos ocupados
+  * Si hay un puerto en uso por otro proceso, el servicio no podrá iniciarse. 
+
+5. 12-Factor
 
 
 
