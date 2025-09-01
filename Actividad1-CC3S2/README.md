@@ -163,11 +163,27 @@ Es el indicativo de una empresa si está cumpliendo sus objetivos.
 
 ### 2.6 Fundamentos prácticos sin comandos
 
+1. HTTP – contrato observable
+Se puede inferir el comportamiento del servidor con las respuestas que esta nos pueda dar.
+
+* **Método**: Es lo que indique la intención de la petición. Puede ser `[POST]`, `[GET]`.
+* **Código de estado**: Sería lo que refleja el resultado `[404 Not Found]`, `[500 Internal Server Error]`, `[200 OK]`.
+* **Cabeceras clave**: Llegan a complementar la respuesta.
 
 
 
+2. DNS – nombres y TTL
+Cuando se consulta al DNS, se puede ver que tipo de registro apunta y por cuanto tiempo se mantiene válido(TTL).
+* Cuando el TTL es bajo(60-300s):
+  * Una propagación rápida, los clientes resfrescan la IP de forma frecuente.
+  * Útil para los rollbacks: Si se cambia la IP de un servicio esencial, la red lo notará en minutos.
+  * Dará una mayor latencia.
+* Cuando el TTL es alto(24h):
+  * Menos consultas al DNS, por lo que da buen rendimiento.
+  * Se dará que algunos usuarios tienen la nueva IP, mientras que otros intentarán usar la IP anterior. Lo que crea ventanas de inconsistencias. 
 
 
+3. TLS - seguridad en tránsito 
 
 
 
