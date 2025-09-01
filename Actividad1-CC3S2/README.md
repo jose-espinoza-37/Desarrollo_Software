@@ -5,8 +5,9 @@ Contexto del tema:
 ## Estructura de actividad 1 
 1. DevOps vs. cascada tradicional
 2. Ciclo tradicional de dos pasos y silos
-3. d
-4. d
+3. Principios y beneficios de DevOps
+4. Evolución a DevSecOps
+5. 
 
 ## Entrega actividad 1
 ### DevOps vs. cascada tradicional
@@ -99,8 +100,41 @@ Los **PR**(pull resques) son solicitudes para fucionar ramas a otras ramas.
   * Hay un notorio cambio entre PR, si el tiempo baja es buen indicativo.
   * No es de paga, ya que los repositorios tienen un registro del tiempo en donde se hacen cada PR.  
 
+### Evolución a DevSecOps
 
-       
+1. Diferencia SAST vs. DAST
+* SAST (Static Application Security Testing):
+  * Es un método el cual analisa el código fuente, código bytes o código binario para poder detectar vulnerabilidades antes de ejecutar el software.
+  * Las vulnerabilidades que detectan son: inyecciones, malas prácticas de criptografía, librerías no seguras.
+  * Se ubica en las primeras fases del pipeline(etapa build). 
+
+* DAST (Dynamic Application Security Testing):
+  * Evalua la aplicación cuando está siendo ejecutada. Simulando ataques reales en un entorgo seguro de staging.
+  * Está puesta en la fase posterior al deslpiegue, en los entornos de prueba.
+    
+2. Gate puertas de cobertura de prueba
+* Se centran en la integridad junto con la eficacia de las pruebas del software.
+* Miden el porcentaje del código cubierto por las pruebas, así mismo, evaluan la calidad de estas.
+* Depende de lo que se mida, pueden estar por encima del 60%, pero no llegan al 100%. 
+
+3. Política de excepción 
+* Es cuando un hallazgo no puede corregirse de forma inmediata.
+* **Excepción temporal**: Cuando situaciones inesperadas cambian el flujo normal del trabajo, por lo que se da un tiempo para poder redirigir al correcto flujo.
+* **Responsable**: Puede ser lider de un módulo, fundamentalmente asume la remediación.
+* **Plan de corrección**: Se toma cuando se nota una vulnerabilidad o error, pero será omitida. Ya sea por falta de soporte para la aplicación u otros casos.
+* **Caducidad automática**: En caso de que se termine el tiempo establecido y no hay correcciones, se bloqueará los pipelines con los despliegues relacionados. 
+
+4. Evitar el teatro de seguridad
+* Se le dice así cuando el equipo ponga como cumplido ciertos requisitos de seguridad, pero en verdad no se ha mejorado.
+Dos señales de eficacia y cómo medirlas.
+
+* Disminución de hallazgos repetidos:
+  * Si las mismas vulnerabilidades no vuelven aparecer, como inyecciones en XXS.
+  * Comparar reportes de SAST/DAST.
+* Reducción de tiempo en remediación:
+  * Cuando el tiempo entre la detección de una vulnerabilidad y su cierre efectivo amenora.
+  * Se puede usar los ¨timestamps de detección y cierre en los issues¨.   
+  
 
 
 
