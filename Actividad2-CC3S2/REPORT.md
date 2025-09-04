@@ -55,6 +55,9 @@ Como el puerto 8080 está siendo usado, lo podemos comprobar.
 Cuando se ejecute peticiones con `curl`, se podrá observar líneas como:
 
 * ![4.1](imagenes/stdout_1.PNG)
+* Cumple con los principios de 12-Factor.
+* Log van hacia stdout y no a los archivos locales.
+
 
 
 
