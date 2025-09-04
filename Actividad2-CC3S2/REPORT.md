@@ -1,4 +1,4 @@
-## Instalar recursos 
+## 0. Instalar recursos 
 Se puede instalar primero `venv`(entorno virtual) dentro de cada actividad que se realizará, así no contaminamos las demás carpetas.
 1. `python3 -m venv venv`
 * Al inicio no nos dejerá hacerlo, pues Debian/Ubuntu no tiene los paquetes necesarios (python3-venv)
@@ -15,7 +15,7 @@ Lo que si es posible es instalar **venv** para todas las carpetas que deseamos, 
 ![0.2](imagenes/instalar_recursos_2.PNG)
 
 
-## HTTP: Fundamentos y herramientas
+## 1. HTTP: Fundamentos y herramientas
 1. Levanta la app 
 ![1.1](imagenes/run_app_py_1.PNG)
 ![1.2](imagenes/run_app_py_2.PNG)
@@ -40,9 +40,8 @@ Con otra terminal de Debian.
 
 3. Ver puertos abiertos
 Como el puerto 8080 está siendo usado, lo podemos comprobar.
-`ss -ltnp | grep :8080`
-
-* ![3.1](imagenes/puerto_1.PNG)
+* `ss -ltnp | grep :8080`
+![3.1](imagenes/puerto_1.PNG)
 
 * Donde:
   * ss = herramienta para sockets
@@ -54,9 +53,12 @@ Como el puerto 8080 está siendo usado, lo podemos comprobar.
 4. Logs a stdout
 Cuando se ejecute peticiones con `curl`, se podrá observar líneas como:
 
-* ![4.1](imagenes/stdout_1.PNG)
+![4.1](imagenes/stdout_1.PNG)
 * Cumple con los principios de 12-Factor.
 * Log van hacia stdout y no a los archivos locales.
+
+
+## 2. DNS: nombres, registros y caché
 
 
 
