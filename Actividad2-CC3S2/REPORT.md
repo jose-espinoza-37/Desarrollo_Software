@@ -14,6 +14,11 @@ Lo que si es posible es instalar **venv** para todas las carpetas que deseamos, 
 0.3. `pip install flask`, De esta forma ya también tenemos el otro recurso faltante para realizar la actividad.
 ![0.3](imagenes/instalar_recursos_2.PNG)
 
+0.4 `sudo apt install dnsutils -y`, Con esto podremos podremos usar dig.
+Aun que también funciona sin este paquete, modificandolo por: `getent hosts miapp.local`.
+
+![0.4](imagenes/instalar_recursos_3.PNG)
+
 
 ## 1. HTTP: Fundamentos y herramientas
 1.1. Levanta la app 
@@ -73,10 +78,19 @@ El archivo `/etc/hosts` se consulta antes que los DNS externos.
 
 2.2. Verificar resolución
 Podemos usar la herramienta dig(Domain Information Groper) para comprobar que el nombre asignado se traduce como esperamos.
+* Se puede usar tanto `dig +short miapp.local` como `getent hosts miapp.local` para obtener el resultado.
+* ![2.2](imagenes/ver_dns_1.PNG)
+* +short es para que solo muestre el IP
+* Es posible que con dig no muestre la IP. Esto pasa debido a `dig` habla directamente con un servidor DNS. Y al no tener un servidor DNS que tenga la autoridad que conozca a `miapp.local` no mostrará nada.
 
+2.3. Observar TTL y caché
+Los archivos en **/etc/hosts** no tienen TTL(tiempo de vida). 
+* Por lo que para entender mejor TTL tomaremos un dominio real usando `dig example.com A +ttlunits`.
+  * ![2.3.1](imagenes/ttl_1.PNG)
+  * Con lo que podemos ver que todas los TTL muestran 0s, y eso se debe que al usar WSL en Windows lo regula para evitar conflictos.
 
-
-
+* En cambio si usamos un "resolver público explicito" como `@1.1.1.1` o `@8.8.8.8` podremos ver los TTL reales.
+  * ![2.3.2](imagenes/ttl_2.PNG)
 
 
 
