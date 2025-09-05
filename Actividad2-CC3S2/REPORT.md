@@ -93,6 +93,7 @@ Los archivos en **/etc/hosts** no tienen TTL(tiempo de vida).
   * ![2.3.2](imagenes/ttl_2.PNG)
 
 
+## 3. TLS con Nginx
 
 
 
