@@ -118,18 +118,19 @@ Con lo que podemos agregar.
 Ahora  miapp debería estar accesible por HTTPS.
 * Ponemos a prueba con `openssl s_client -connect miapp.local:443 -servername miapp.local -brief`.
 * Con lo que podremos visualizar.
-* ![3.3.1](imagenes/val_ts_l.PNG)
+* ![3.3.2](imagenes/val_tsl_1.PNG)
 * Versión de TSL: **TLSv1.3**
 * Certificado cargado: **miapp.local**
 
 * Podemos probar usando curl, ya que se usa-k debido al certificado automático.
-*  ![3.3.2](imagenes/val_ts_2.PNG)
+*  ![3.3.2](imagenes/val_tsl_2.PNG)
   
 
 3.4. Verificar puertos y logs
 Verificamos que ambos Socket estén abiertos con `ss -ltnp | grep -E ':(443|8080)'`.
 
 * ![3.4](imagenes/ver_puertos_1.PNG)
+
 
 
 
