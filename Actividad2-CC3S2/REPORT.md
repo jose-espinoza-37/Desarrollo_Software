@@ -110,8 +110,8 @@ No es válido para navegadores sin advertencias.
 3.2.Configurar Nginx como reverse proxy
 Entramos a **miapp** usando: `sudo nano /etc/nginx/sites-available/miapp`.
 Con lo que podemos agregar.
-![3.2](imagenes/nginx_1.PNG)
-
+![3.2.1](imagenes/nginx_1.PNG)
+![3.2.2](imagenes/nginx_2.PNG)
 
 
 3.3. Validar el handshake TLS
@@ -130,6 +130,7 @@ Ahora  miapp debería estar accesible por HTTPS.
 Verificamos que ambos Socket estén abiertos con `ss -ltnp | grep -E ':(443|8080)'`.
 
 * ![3.4](imagenes/ver_puertos_1.PNG)
+
 
 
 
