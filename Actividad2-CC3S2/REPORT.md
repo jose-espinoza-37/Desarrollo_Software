@@ -94,6 +94,48 @@ Los archivos en **/etc/hosts** no tienen TTL(tiempo de vida).
 
 
 ## 3. TLS con Nginx
+Transport Layer Security se encarga de cifrar el tráfico entre el cliente y servidor.
+
+
+3.1. Generar un certificado generado
+No es válido para navegadores sin advertencias.
+
+* Primero creamos una carpeta para certificados.
+  * ![3.1](imagenes/certificado_1.PNG)
+  * `-newkey rsa:2048` : Crea clave nueva RSA de 2048 bits.
+  * `-nodes` : Sin password en la clave.
+  * `-x509` : Certificado X.509 autofirmado.
+  * `-subj "/CN=miapp.local"` : el Common Name será **miapp.local**.
+
+3.2.Configurar Nginx como reverse proxy
+Entramos a **miapp** usando: `sudo nano /etc/nginx/sites-available/miapp`.
+Con lo que podemos agregar.
+![3.2](imagenes/nginx_1.PNG)
+
+
+
+3.3. Validar el handshake TLS
+Ahora  miapp debería estar accesible por HTTPS.
+* Ponemos a prueba con `openssl s_client -connect miapp.local:443 -servername miapp.local -brief`.
+* Con lo que podremos visualizar.
+* ![3.3.1](imagenes/val_ts_l.PNG)
+* Versión de TSL: **TLSv1.3**
+* Certificado cargado: **miapp.local**
+
+* Podemos probar usando curl, ya que se usa-k debido al certificado automático.
+*  ![3.3.2](imagenes/val_ts_2.PNG)
+  
+
+3.4. Verificar puertos y logs
+Verificamos que ambos Socket estén abiertos con `ss -ltnp | grep -E ':(443|8080)'`.
+
+* ![3.4](imagenes/ver_puertos_1.PNG)
+
+
+
+
+
+
 
 
 
